@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>quiz 💘</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background:url(car-background.jpeg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    h1 {
+      color: beige;
+      margin-bottom: 20px;
+    }
+
+    .question-card {
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 500px;
+      width: 100%;
+      margin-bottom: 30px;
+      transition: 0.3s ease;
+    }
+
+    .question {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #660033;
+    }
+
+    .options button {
+      display: block;
+      width: 100%;
+      background: #ffccff;
+      border: none;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .options button:hover {
+      background: #ff99cc;
+    }
+
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+      color: green;
+    }
+
+    .wrong {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖A LITTLE QUIZ FOR MY LOVE 💖</h1>
+
+  <div class="question-card">
+    <div class="question">1. What do I usually call you?</div>
+    <div class="options">
+      <button onclick="checkAnswer(this, 'correct')">Sugarplum</button>
+      <button onclick="checkAnswer(this)">Pumpkin</button>
+      <button onclick="checkAnswer(this)">Cutie Muffin</button>
+    </div>
+    <div class="result"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">2. Which moment do I love the most with you?</div>
+    <div class="options">
+      <button onclick="checkAnswer(this)">Videocalls</button>
+      <button onclick="checkAnswer(this)">calls😤</button>
+      <button onclick="checkAnswer(this, 'correct')">when we are on meet🥹❤️</button>
+    </div>
+    <div class="result"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">3. What is saiyam's favouite food?</div>
+    <div class="options">
+      <button onclick="checkAnswer(this)">Chicken ,Mutton</button>
+      <button onclick="checkAnswer(this, 'correct')">Your Baby</button>
+      <button onclick="checkAnswer(this)">Momos</button>
+    </div>
+    <div class="result"></div>
+  </div>
+
+  <div class="question-card">
+    <div class="question">4.Saiyam's favourite car?</div>
+    <div class="options">
+      <button onclick="checkAnswer(this, 'correct')">BMW 🌇</button>
+      <button onclick="checkAnswer(this)">Lamborghini</button>
+      <button onclick="checkAnswer(this)">Thar</button>
+    </div>
+    <div class="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer(btn, correct) {
+      const resultDiv = btn.parentElement.nextElementSibling;
+      if (correct === 'correct') {
+        resultDiv.textContent = "Yesss, you got it right baby! 💘";
+        resultDiv.className = "result";
+      } else {
+        resultDiv.textContent = "Oops! Not the right one 😢";
+        resultDiv.className = "result wrong";
+      }
+
+      const buttons = btn.parentElement.querySelectorAll('button');
+      buttons.forEach(b => b.disabled = true);
+    }
+  </script>
+</body>
+</html>
